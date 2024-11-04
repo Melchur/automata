@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automata Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automata Visualizer</h1>
+        
+        <div class="controls">
+            <input type="text" id="stateInput" placeholder="Enter State Name" />
+            <button onclick="addState()">Add State</button>
+            
+            <input type="text" id="transitionInput" placeholder="Transition (e.g., A,B,a)" />
+            <button onclick="addTransition()">Add Transition</button>
+            
+            <button onclick="setInitialState()">Set Initial State</button>
+            <button onclick="setFinalState()">Set Final State</button>
+            <button onclick="removeState()">Remove State</button>
+            <button onclick="removeTransition()">Remove Transition</button>
+
+            <button onclick="simulate()">Simulate</button>
+        </div>
+
+        <svg id="transitionSVG" class="transition-canvas" width="500" height="500">
+            <defs>
+                <marker id="arrowhead" markerWidth="100px" markerHeight="100" refX="100" refY="300" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                </marker>
+            </defs>
+        </svg>        
+        <div id="canvas"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

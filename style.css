@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input, button {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+#canvas {
+    border: 2px solid #007bff;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.transition-canvas {
+    position: absolute;
+    top: 178px;
+    left: 0px;
+    right: 100px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.state {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    position: absolute;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.initial {
+    border-color: #4caf50;
+}
+
+.final {
+    background-color: #ffeb3b;
+}
+
+.arrow {
+    stroke: black;
+    stroke-width: 2px;
+    marker-end: url(#arrowhead);
+}
+
+.state.highlighted {
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+.state:hover {
+    border-color: #888;
+    cursor: pointer;
+}
+
+button:focus, input:focus {
+    outline: none;
+    border-color: #007bff;
+}
